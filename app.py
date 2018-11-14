@@ -122,5 +122,5 @@ def logout():
         request.session.delete()
         redirect('/')
         
-bottle.run(host="0.0.0.0", port=argv[1], reloader=True, debug=True)
+bottle.run(app=app, host="0.0.0.0", port=argv[1], reloader=True, debug=True)
   
