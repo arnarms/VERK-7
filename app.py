@@ -88,7 +88,10 @@ def do_register(db):
         request.session.save()
         redirect('/')
     else:
-        redirect('/register')
+        return  """ 
+                Username is already registered, choose another one
+                <a href="/register"> Try Again </a> 
+                """
 
 @route('/login')
 def login():
@@ -106,7 +109,11 @@ def do_login(db):
         request.session.save()
         redirect('/')
     else:
-        redirect('/login')
+        return  """ 
+                Username or Password was wrong, 
+                <a href="/login"> Try Again </a> 
+                """
+
 
 
 @route('/admin')
